@@ -9,10 +9,10 @@ task main() {
 		int x  = vexRT[Ch1];   // Right Joystick X value
 		int y = vexRT[Ch3];   // Left Joystick Y value
 
-		if (mathAbsLong(x) < 10) {
+		if (abs(x) < 10) {
 			x = 0;
 		}
-		if (mathAbsLong(y) < 10) {
+		if (abs(y) < 10) {
 			y = 0;
 		}
 
@@ -42,7 +42,7 @@ task main() {
 		int backRight = right;
 
 		int mech = vexRT[Ch4];  // Left Joystick X value
-		if (mathAbsLong(mech) < 10) {
+		if (abs(mech) < 10) {
 			mech = 0;
 		}
 
@@ -76,12 +76,6 @@ task main() {
 		if (backRight > 127) {
 			backRight = 127;
 		}
-
-		motor[frontLeftMotor] = frontLeft;
-		motor[backLeftMotor] = backLeft;
-		motor[frontRightMotor] = frontRight;
-		motor[backRightMotor] = backRight;
-
 		int timeToRotate = 1000;
 
 		if (vexRT[Btn8L] == 1) {
@@ -94,7 +88,7 @@ task main() {
 			motor[backLeftMotor] = 0;
 			motor[frontRightMotor] = 0;
 			motor[backRightMotor] = 0;
-		} else if (vexRT[Btn8R] == 1) {
+			} else if (vexRT[Btn8R] == 1) {
 			motor[frontLeftMotor] = 127;
 			motor[backLeftMotor] = 127;
 			motor[frontRightMotor] = -128;
@@ -104,7 +98,7 @@ task main() {
 			motor[backLeftMotor] = 0;
 			motor[frontRightMotor] = 0;
 			motor[backRightMotor] = 0;
-		} else if (vexRT[Btn8D] == 1) {
+			} else if (vexRT[Btn8D] == 1) {
 			motor[frontLeftMotor] = 127;
 			motor[backLeftMotor] = 127;
 			motor[frontRightMotor] = -128;
@@ -115,6 +109,22 @@ task main() {
 			motor[frontRightMotor] = 0;
 			motor[backRightMotor] = 0;
 		}
+
+		// TO STABALIZE
+		// FRONT LEFT AND BACK RIGHT GO FORWARDS
+		// BACK LEFT AND FRONT RIGHT GO BACKWARDS
+		if (x == 0 && y == 0 && mech == 0) {
+			frontLeft = 10;
+			frontRight = -10;
+			backLeft = -10;
+			backRight = 10;
+		}
+
+
+		motor[frontLeftMotor] = frontLeft;
+		motor[backLeftMotor] = backLeft;
+		motor[frontRightMotor] = frontRight;
+		motor[backRightMotor] = backRight;
 
 	}
 }
