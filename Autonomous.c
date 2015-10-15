@@ -6,7 +6,6 @@
 
 
 task main() {
-
 	int speed;
 	int sonar_value;
 	int distance = 25;
@@ -34,6 +33,4 @@ task main() {
 
 		wait1Msec(100);
 	}
-
-
 }
