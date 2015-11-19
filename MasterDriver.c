@@ -84,30 +84,30 @@ task main() {
 		int timeToRotate = 1000;
 
 		if (vexRT[Btn8L] == 1) {
-			motor[frontLeftMotor] = -128;
-			motor[backLeftMotor] = -128;
-			motor[frontRightMotor] = 127;
-			motor[backRightMotor] = 127;
+			motor[frontLeftMotor] = -115;
+			motor[backLeftMotor] = -115;
+			motor[frontRightMotor] = 115;
+			motor[backRightMotor] = 115;
 			wait1Msec(timeToRotate);
 			motor[frontLeftMotor] = 0;
 			motor[backLeftMotor] = 0;
 			motor[frontRightMotor] = 0;
 			motor[backRightMotor] = 0;
 			} else if (vexRT[Btn8R] == 1) {
-			motor[frontLeftMotor] = 127;
-			motor[backLeftMotor] = 127;
-			motor[frontRightMotor] = -128;
-			motor[backRightMotor] = -128;
+			motor[frontLeftMotor] = 115;
+			motor[backLeftMotor] = 115;
+			motor[frontRightMotor] = -115;
+			motor[backRightMotor] = -115;
 			wait1Msec(timeToRotate);
 			motor[frontLeftMotor] = 0;
 			motor[backLeftMotor] = 0;
 			motor[frontRightMotor] = 0;
 			motor[backRightMotor] = 0;
 			} else if (vexRT[Btn8D] == 1) {
-			motor[frontLeftMotor] = 127;
-			motor[backLeftMotor] = 127;
-			motor[frontRightMotor] = -128;
-			motor[backRightMotor] = -128;
+			motor[frontLeftMotor] = 115;
+			motor[backLeftMotor] = 115;
+			motor[frontRightMotor] = -115;
+			motor[backRightMotor] = -115;
 			wait1Msec(timeToRotate*2);
 			motor[frontLeftMotor] = 0;
 			motor[backLeftMotor] = 0;
